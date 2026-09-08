@@ -1,5 +1,5 @@
-# Face Blur & Pixelation Batch Tool (`face_blur-cv2`)
-Script Python per il rilevamento e l'offuscamento automatico dei volti (blur gaussiano o pixelatura) su video in modalità batch, con conservazione della traccia audio tramite **FFmpeg** (deve essere nel PATH).
+# Face Blur & Pixelation Batch Tool
+Python script for automatic face detection and blurring (Gaussian blur or pixelation) in videos in batch mode, preserving the original audio track via FFmpeg (must be in system PATH)
 ## Installation
 You need:
 1. **Python 3.8+**
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 | `-p` | `--pixel-blocks`  | `12`            | Pixelation grid scale (**lower value = larger pixels**) |
 | `-i` | `--input`         | `input_videos`  | Path to the directory containing source videos          |
 | `-o` | `--output`        | `output_videos` | Path to the destination directory for processed videos  |
-| `-h` | `--help`          | —               | Show help message and exit                              |
+| `-h` | `--help`          |                 | Show help message and exit                              |
 
 ---
 ### Examples
