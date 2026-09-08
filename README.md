@@ -4,10 +4,10 @@ Python script for automatic face detection and blurring (Gaussian blur or pixela
 You need:
 1. **Python 3.8+**
 2. **FFmpeg**:
-   - **Ubuntu/Debian:** `apt install ffmpeg`
-   - **Fedora:**  `dnf install ffmpeg`
-   - **macOS:** `brew install ffmpeg`
-   - **Windows:** sownload from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) and add to PATH (or ```winget install Gyan.FFmpeg```).
+    - **Ubuntu/Debian:** `apt install ffmpeg`
+    - **Fedora:**  `dnf install ffmpeg`
+    -  **macOS:** `brew install ffmpeg`
+    -  **Windows:** sownload from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) and add to PATH (or ```winget install Gyan.FFmpeg```).
 Than clone the repository and install the dependency:
 ```bash
 git clone https://github.com/renz04l/face_blur-cv2.git
