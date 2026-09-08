@@ -8,7 +8,7 @@ You need:
     - **Fedora:**  `dnf install ffmpeg`
     - **macOS:** `brew install ffmpeg`
     - **Windows:** download from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) and add to PATH (or ```winget install Gyan.FFmpeg```).
-    - 
+
 Than clone the repository and install the dependency:
 ```bash
 git clone https://github.com/renz04l/face_blur-cv2.git
@@ -59,6 +59,7 @@ python main.py -i ./my_input -o ./censored
 
   
 # To-do
+- [X] MIT LICENSE
 - [ ] From **Haar Cascade** to **OpenCV YuNet** (FaceDetectorYN)
 - [ ] Maybe **MediaPipe Face Detection (BlazeFace)** or **YOLO-Face o SCRFD**
 - [ ] Add temporal tracking (ByteTrack, Norfair ...)
