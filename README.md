@@ -2,7 +2,7 @@
 Python script for automatic face detection and blurring (Gaussian blur or pixelation) in videos in batch mode, preserving the original audio track via FFmpeg (must be in system PATH)
 ## Installation
 You need:
-1. **Python 3.8+**
+1. **[Python 3.8+](https://www.python.org/downloads/)**
 2. **FFmpeg**:
     - **Ubuntu/Debian:** `apt install ffmpeg`
     - **Fedora:**  `dnf install ffmpeg`
