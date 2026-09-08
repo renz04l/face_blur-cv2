@@ -6,8 +6,8 @@ You need:
 2. **FFmpeg**:
     - **Ubuntu/Debian:** `apt install ffmpeg`
     - **Fedora:**  `dnf install ffmpeg`
-    -  **macOS:** `brew install ffmpeg`
-    -  **Windows:** sownload from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) and add to PATH (or ```winget install Gyan.FFmpeg```).
+    - **macOS:** `brew install ffmpeg`
+    - **Windows:** download from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) and add to PATH (or ```winget install Gyan.FFmpeg```).
 Than clone the repository and install the dependency:
 ```bash
 git clone https://github.com/renz04l/face_blur-cv2.git
