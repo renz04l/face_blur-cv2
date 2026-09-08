@@ -51,7 +51,7 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
 
     face_cascade = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_frontalface_default.xml")
 
-    print(f"\State: {filename} ({total_frames} frames) - Mode: {mode}")
+    print(f"\n State: {filename} ({total_frames} frames) - Mode: {mode}")
     pbar = tqdm(total=total_frames, unit="frame")
 
     while True:
