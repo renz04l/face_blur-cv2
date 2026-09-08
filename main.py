@@ -92,7 +92,7 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
     cap.release()
     out.release()
 
-    #FFmpeg audio
+    #FFmpeg audio (add output)
     ffmpeg_cmd = [
         "ffmpeg", "-y",
         "-i", temp_video_path,
@@ -112,9 +112,9 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
 
     print(f"OK: {final_output_path}")
 
-# to improve
+# change
 def parse_args():
-    parser = argparse.ArgumentParser(description="Batch face blur and pixelation for videos.")
+    parser = argparse.ArgumentParser(description="Batch face blur and pixelation for videos")
     
     parser.add_argument(
         "-m", "--mode",

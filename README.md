@@ -58,7 +58,7 @@ python main.py -i ./my_input -o ./censored
 
   
 # To-do
-- [ ] From **Haar Cascade** to **OpenCV YuNet (`FaceDetectorYN`)
+- [ ] From **Haar Cascade** to **OpenCV YuNet** (FaceDetectorYN)
 - [ ] Maybe **MediaPipe Face Detection (BlazeFace)** or **YOLO-Face o SCRFD**
 - [ ] Add temporal tracking (ByteTrack, Norfair ...)
 - [ ] EMA, Kalman and Feathering
