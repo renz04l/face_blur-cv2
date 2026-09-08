@@ -3,7 +3,8 @@ Python script for automatic face detection and blurring (Gaussian blur or pixela
 ## Installation
 You need:
 1. **[Python 3.8+](https://www.python.org/downloads/)**
-2. **FFmpeg**:
+2. **[pip](https://pip.pypa.io/en/stable/installation/)**
+3. **FFmpeg**:
     - **Ubuntu/Debian:** `apt install ffmpeg`
     - **Fedora:**  `dnf install ffmpeg`
     - **macOS:** `brew install ffmpeg`
@@ -60,9 +61,9 @@ python main.py -i ./my_input -o ./censored
   
 # To-do
 - [X] MIT LICENSE
+- [ ] pytest, automatic test and divide main
 - [ ] From **Haar Cascade** to **OpenCV YuNet** (FaceDetectorYN)
-- [ ] Maybe **MediaPipe Face Detection (BlazeFace)** or **YOLO-Face o SCRFD**
-- [ ] Add temporal tracking (ByteTrack, Norfair ...)
+- [ ] **MediaPipe Face Detection (BlazeFace)** or **YOLO-Face o SCRFD** and add temporal tracking (ByteTrack, Norfair ...)
 - [ ] EMA, Kalman and Feathering
 - [ ] Reduce frame resolution for mapping fase
-- [ ] Add result and diff gif on readme (blur/pixelate - haar version vs yunet version)
+- [ ] Add result and diff gif on README (blur/pixelate - haar version vs yunet version)
