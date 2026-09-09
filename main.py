@@ -1,12 +1,12 @@
 import argparse
 import os
 #import shutil
-import subprocess
-import cv2 as cv
-import numpy as np
-from tqdm import tqdm
-
+#import subprocess
+#import cv2 as cv
+#import numpy as np
+#from tqdm import tqdm
 from utils import check_ffmpeg
+from processor import process_video, SUPPORTED_EXTENSIONS
 # use FaceDetectorYN !!!
 
 SUPPORTED_EXTENSIONS = (".mp4", ".avi", ".mov", ".mkv")
@@ -15,7 +15,7 @@ SUPPORTED_EXTENSIONS = (".mp4", ".avi", ".mov", ".mkv")
 def check_ffmpeg():
     if shutil.which("ffmpeg") is None:
         raise SystemError("Add FFmpeg to PATH!")
-'''
+
 
 def apply_blur(roi, strength):
     k = strength if strength % 2 != 0 else strength + 1
@@ -113,8 +113,8 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
         os.remove(temp_video_path)
 
     print(f"OK: {final_output_path}")
+'''
 
-# change
 def parse_args():
     parser = argparse.ArgumentParser(description="Batch face blur and pixelation for videos")
     

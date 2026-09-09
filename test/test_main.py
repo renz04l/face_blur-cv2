@@ -6,8 +6,8 @@ from unittest import mock
 '''
 python -m pytest -v           
 '''
-# import function from main
-from main import apply_blur, apply_pixelation
+# import function from effects and utils
+from effects import apply_blur, apply_pixelation
 from utils import check_ffmpeg
 
 def test_apply_blur():
