@@ -9,3 +9,4 @@ input_videos/*
 output_videos/*
 !output_videos/.gitkeep
 temp_*.*
+lastrun.txt

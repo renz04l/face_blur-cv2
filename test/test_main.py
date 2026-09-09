@@ -3,7 +3,9 @@ import shutil
 import numpy as np
 import pytest
 from unittest import mock
-
+'''
+python -m pytest -v           
+'''
 # import function from main
 from main import apply_blur, apply_pixelation, check_ffmpeg
 
@@ -54,7 +56,7 @@ def test_check_ffmpeg_installed(mock_which):
     try:
         check_ffmpeg()
     except SystemError:
-        pytest.fail("check_ffmpeg() sollevato inaspettatamente SystemError!")
+        pytest.fail("check_ffmpeg() SystemError!")
 
 @mock.patch('shutil.which')
 def test_check_ffmpeg_missing(mock_which):
@@ -63,3 +65,4 @@ def test_check_ffmpeg_missing(mock_which):
     # check ffmpeg not existing (SystemError)
     with pytest.raises(SystemError, match="Add FFmpeg to PATH!"):
         check_ffmpeg()
+
