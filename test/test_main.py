@@ -7,8 +7,8 @@ from unittest import mock
 python -m pytest -v           
 '''
 # import function from main
-from main import apply_blur, apply_pixelation, check_ffmpeg
-
+from main import apply_blur, apply_pixelation
+from utils import check_ffmpeg
 
 def test_apply_blur():
     # fake white roi (Region of Interest) 100x100 pixel
