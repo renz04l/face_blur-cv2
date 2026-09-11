@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 import logging
 import tempfile
@@ -10,6 +11,17 @@ from effects import apply_blur, apply_pixelation
 SUPPORTED_EXTENSIONS = (".mp4", ".avi", ".mov", ".mkv")
 
 logger = logging.getLogger(__name__)
+
+# pyinstal
+def get_resource_path(relative_path):
+    try:
+        # exe: PyInstaller use _MEIPASS
+        base_path = sys._MEIPASS
+    except AttributeError:
+        #script
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
     filename = os.path.basename(file_path)
@@ -34,7 +46,12 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
         fourcc = cv.VideoWriter_fourcc(*"mp4v")
         out = cv.VideoWriter(temp_video_path, fourcc, fps, (width, height))
 
-        face_cascade = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_frontalface_default.xml")
+        xml_path = get_resource_path("haarcascade_frontalface_default.xml")
+        face_cascade = cv.CascadeClassifier(xml_path)
+        
+        if face_cascade.empty():
+            logger.error(f"XML not found: {xml_path}")
+            return
 
         logger.info(f"File: {filename} ({total_frames} frames) - Mode: {mode}")
         pbar = tqdm(total=total_frames, unit="frame")
