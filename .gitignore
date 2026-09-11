@@ -6,3 +6,9 @@ env/
 
 input_videos/*
 output_videos/*
+
+# PyInstaller
+build/
+dist/
+*.spec
+*.exe
