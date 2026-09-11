@@ -61,7 +61,15 @@ def main():
     check_ffmpeg()
 
     os.makedirs(args.output, exist_ok=True)
-    os.makedirs(args.input, exist_ok=True)
+
+    if not os.path.exists(args.input):
+        if args.input == "input_videos":
+            os.makedirs(args.input, exist_ok=True)
+            logger.warning(f"Created default input folder '{args.input}'.")
+            logger.info("Please put your videos inside and run again.")
+        else:
+            logger.error(f"Input folder '{args.input}' does not exist.")
+        return
 
     files = [
         f for f in os.listdir(args.input) 
@@ -70,7 +78,6 @@ def main():
     
     if not files:
         logger.warning(f"No supported video files found in '{args.input}'.")
-        logger.info(f"Please add your videos ({SUPPORTED_EXTENSIONS}) to the folder and run again.")
         return
 
     logger.info(f"Found {len(files)} video(s) in '{args.input}'.")
