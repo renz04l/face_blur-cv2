@@ -10,12 +10,15 @@ You need:
     - **macOS:** `brew install ffmpeg`
     - **Windows:** download from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) and add to PATH (or ```winget install Gyan.FFmpeg```).
 
-Than clone the repository and install the dependency:
+Than clone `git clone https://github.com/renz04l/face_blur-cv2.git` the repository (or download as [ZIP](https://github.com/renz04l/face_blur-cv2/archive/refs/heads/master.zip) and extract) and install the dependency:
 ```bash
-git clone https://github.com/renz04l/face_blur-cv2.git
+# enter inside the folder
 cd face_blur-cv2
+# create a virtual environment
 python -m venv venv
+# exec to enter
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+# install dependencies 
 pip install -r requirements.txt
 ```
 
