@@ -60,8 +60,12 @@ def main():
     args = parse_args()
     check_ffmpeg()
 
-    os.makedirs(args.input, exist_ok=True)
     os.makedirs(args.output, exist_ok=True)
+
+    if not os.path.exists(args.input):
+        os.makedirs(args.input, exist_ok=True)
+        logger.warning(f"Created input folder '{args.input}'. Please put your videos inside and run again.")
+        return
 
     files = [f for f in os.listdir(args.input) if f.lower().endswith(SUPPORTED_EXTENSIONS)]
     if not files:
