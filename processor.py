@@ -1,10 +1,15 @@
 import os
 import subprocess
+import logging
+import tempfile
+import shutil
 import cv2 as cv
 from tqdm import tqdm
 from effects import apply_blur, apply_pixelation
 
 SUPPORTED_EXTENSIONS = (".mp4", ".avi", ".mov", ".mkv")
+
+logger = logging.getLogger(__name__)
 
 def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
     filename = os.path.basename(file_path)
@@ -15,7 +20,7 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
 
     cap = cv.VideoCapture(file_path)
     if not cap.isOpened():
-        print(f"Error opening file: {filename}")
+        logger.error(f"Error opening file: {filename}")
         return
 
     width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
@@ -28,7 +33,7 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
 
     face_cascade = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_frontalface_default.xml")
 
-    print(f"\n File: {filename} ({total_frames} frames) - Mode: {mode}")
+    logger.info(f"File: {filename} ({total_frames} frames) - Mode: {mode}")
     pbar = tqdm(total=total_frames, unit="frame")
 
     while True:
@@ -89,4 +94,4 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
     if os.path.exists(temp_video_path):
         os.remove(temp_video_path)
 
-    print(f"OK: {final_output_path}")
+    logger.info(f"OK: {final_output_path}")

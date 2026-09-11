@@ -62,7 +62,6 @@ python main.py -i ./my_input -o ./censored
 # To-do
 - [X] MIT LICENSE
 - [X] pytest, automatic test and divide main
-- [ ] from printf to log?
 - [ ] From **Haar Cascade** to **OpenCV YuNet** (FaceDetectorYN)
 - [ ] **MediaPipe Face Detection (BlazeFace)** or **YOLO-Face o SCRFD** and add temporal tracking (ByteTrack, Norfair ...)
 - [ ] EMA, Kalman and Feathering
