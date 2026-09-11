@@ -23,9 +23,9 @@ pip install -r requirements.txt
 
 | Flag | Long Flag         | Default         | Description                                             |
 | ---- | ----------------- | --------------- | ------------------------------------------------------- |
-| `-m` | `--mode`          | `blur`          | Obfuscation technique: `blur` or `pixelate`             |
-| `-b` | `--blur-strength` | `51`            | Kernel size for Gaussian blur (**must an odd number**)  |
-| `-p` | `--pixel-blocks`  | `12`            | Pixelation grid scale (**lower value = larger pixels**) |
+| `-m` | `--mode`          | `blur`          | Obfuscation technique: `blur`, `privacy` or `pixelate`  |
+| `-b` | `--blur-strength` | `51`            | Kernel size for Gaussian blur (**lower = more visible**)|
+| `-p` | `--pixel-blocks`  | `12`            | Pixelation grid scale (**lower = larger pixels**)       |
 | `-i` | `--input`         | `input_videos`  | Path to the directory containing source videos          |
 | `-o` | `--output`        | `output_videos` | Path to the destination directory for processed videos  |
 | `-h` | `--help`          |                 | Show help message and exit                              |
@@ -48,7 +48,7 @@ Reduces the block count to 6 for maximum anonymity:
 python main.py -m pixelate -p 6
 ```
 #### 4. Heavy Blur
-Increases blur strength for strong obfusation:
+Increases blur strength for strong obfusation (must be an odd integer): 
 ```bash
 python main.py -m blur -b 99
 ```

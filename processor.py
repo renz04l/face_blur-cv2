@@ -57,7 +57,9 @@ def process_video(file_path, output_dir, mode, blur_strength, pixel_blocks):
             if roi.size == 0:
                 continue
 
-            if mode == "pixelate":
+            if mode == "privacy":
+                frame[y1:y2, x1:x2] = (0, 0, 0)
+            elif mode == "pixelate":
                 frame[y1:y2, x1:x2] = apply_pixelation(roi, pixel_blocks)
             else:
                 frame[y1:y2, x1:x2] = apply_blur(roi, blur_strength)

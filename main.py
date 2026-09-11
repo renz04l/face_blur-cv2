@@ -3,16 +3,16 @@ import os
 
 from utils import check_ffmpeg
 from processor import process_video, SUPPORTED_EXTENSIONS
-# use FaceDetectorYN !!!
 
+# parser
 def parse_args():
     parser = argparse.ArgumentParser(description="Batch face blur and pixelation for videos")
     
     parser.add_argument(
         "-m", "--mode",
-        choices=["blur", "pixelate"],
+        choices=["blur", "privacy", "pixelate"],
         default="blur",
-        help="Mode to censor faces :  'pixelate' or 'blur' [default]"
+        help="Mode to censor faces :  'privacy', 'pixelate' or 'blur' [default]"
     )
     parser.add_argument(
         "-b", "--blur-strength",
@@ -36,7 +36,16 @@ def parse_args():
         default="output_videos",
         help="Output folder  [default: output_videos]"
     )
+
+    args = parser.parse_args()
     
+    if args.pixel_blocks < 1:
+        parser.error("--pixel-blocks must be greater than 0")
+    if args.blur_strength < 1:
+        parser.error("--blur-strength must be positive")
+    if args.blur_strength % 2 == 0:
+        parser.error("--blur-strength must be an odd integer")
+
     return parser.parse_args()
 
 
