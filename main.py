@@ -65,7 +65,6 @@ def main():
     if not os.path.exists(args.input):
         os.makedirs(args.input, exist_ok=True)
         logger.info(f"Created missing input folder: '{args.input}'")
-        logger.warning(f"Created input folder '{args.input}'. Please put your videos inside and run again.")
         return
 
     files = [
@@ -75,7 +74,6 @@ def main():
     
     if not files:
         logger.warning(f"Not found any supported file in ./{args.input}/.")
-        logger.info(f"Add some videos ({SUPPORTED_EXTENSIONS}) to the folder and run again.")
         return
 
     logger.info(f"Found {len(files)} videos in '{args.input}'.")
