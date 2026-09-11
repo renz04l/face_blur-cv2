@@ -94,4 +94,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except Exception as e:
+        logger.error(f"Error: {e}")
+    finally:
+        input("\nPress ENTER to exit...")
