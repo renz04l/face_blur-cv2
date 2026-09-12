@@ -1,5 +1,7 @@
 import argparse
 import os
+import shlex
+import sys
 import logging
 from utils import check_ffmpeg
 from processor import process_video, SUPPORTED_EXTENSIONS
@@ -94,6 +96,18 @@ def main():
 
 
 if __name__ == "__main__":
+
+    if len(sys.argv) == 1:
+        print("Face Blur CLI")
+        print("Write your comand (eg. '-m privacy') ENTER for default (blur).")
+        
+        user_input = input("FaceBlur> ").strip()
+        
+        # convert
+        if user_input:
+            # shlex.split...
+            sys.argv.extend(shlex.split(user_input))
+            print()
     try:
         main()
     except KeyboardInterrupt:
