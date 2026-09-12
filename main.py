@@ -99,8 +99,9 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 1:
         print("Face Blur CLI")
-        print("Write your comand (eg. '-m privacy') ENTER for default (blur).")
-        
+        print("Press ENTER to run with defaults (blur mode), or type custom flags.")
+        print("Example: -m privacy -p 15\n")  
+              
         user_input = input("FaceBlur> ").strip()
         
         # convert
