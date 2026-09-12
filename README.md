@@ -40,10 +40,10 @@ Applies a standard Gaussian blur (strength: 51) to all videos in `input_videos/`
 ```bash
 python main.py
 ```
-#### 2. Pixelation Mode
-Censors faces using a mosaic pixel effect: 
+#### 2. Privacy Mode
+Censors faces using a black square: 
 ```bash
-python main.py -m pixelate
+python main.py -m privacy
 ```
 #### 3. Heavy Pixelation (Larger Blocks)
 Reduces the block count to 6 for maximum anonymity:
@@ -63,10 +63,8 @@ python main.py -i ./my_input -o ./censored
 
   
 # To-do
-- [X] MIT LICENSE
-- [X] pytest, automatic test and divide main
-- [ ] From **Haar Cascade** to **OpenCV YuNet** (FaceDetectorYN)
-- [ ] **MediaPipe Face Detection (BlazeFace)** or **YOLO-Face o SCRFD** and add temporal tracking (ByteTrack, Norfair ...)
-- [ ] EMA, Kalman and Feathering
-- [ ] Reduce frame resolution for mapping fase
-- [ ] Add result and diff gif on README (blur/pixelate - haar version vs yunet version)
+- [X] Refactor codebase (separate main.py and processor.py) and implement automated tests (pytest)
+- [ ] Frame Persistence, short-term memory buffer (3-5 frames) to maintain the blur box if the detector briefly loses the face, drastically reducing flickering
+- [ ] Downscale frame resolution strictly during the mapping/detection phase to significantly boost processing speed (FPS)
+- [ ] Engine Upgrade, from Haar Cascades to OpenCV YuNet (FaceDetectorYN) to eliminate false positives and for side profiles
+- [ ] Add result and diff GIFs on README (blur/pixelate - Haar Cascades version vs FaceDetectorYN version)
