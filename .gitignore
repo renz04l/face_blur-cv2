@@ -12,3 +12,4 @@ build/
 dist/
 *.spec
 *.exe
+!dist/README.txt
